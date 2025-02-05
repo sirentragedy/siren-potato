@@ -1,0 +1,109 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 15px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+li {
+    display: inline;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#pop {
+    background-color: white;
+    color: black;
+    padding: 20px 40px;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background-color 0.3s, color 0.3s;
+}
+
+#pop:hover {
+    transform: scale(1.1);
+}
+
+/* Bubble Effect Container */
+#bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* Bubble Effect */
+.bubble {
+    position: absolute;
+    background-color: white; /* Will be randomized in JS */
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: popAnim 0.9s ease-out forwards;
+}
+
+/* Animation */
+@keyframes popAnim {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
