@@ -56,6 +56,7 @@ document.getElementById("pop").addEventListener("click", function() {
 });
 
 // Recoloring the Page
+// Recoloring the Page
 document.getElementById("recolor").addEventListener("click", function() {
     let newColor = getBrightColor();
     document.body.style.backgroundColor = newColor;
@@ -68,11 +69,17 @@ document.getElementById("recolor").addEventListener("click", function() {
         link.style.color = "black";
     });
 
+    // Ensure ribbons also update their color
+    document.getElementById("recolor").style.backgroundColor = lightenColor(newColor, 50);
+    document.getElementById("decolor").style.backgroundColor = lightenColor(newColor, 50);
+
     document.getElementById("pop").style.backgroundColor = "black";
     document.getElementById("pop").style.color = "white";
 });
 
+
 // Decoloring the Page
+// Resetting Page Colors (Decolor)
 document.getElementById("decolor").addEventListener("click", function() {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
@@ -82,7 +89,11 @@ document.getElementById("decolor").addEventListener("click", function() {
     document.querySelectorAll(".nav-link").forEach(link => {
         link.style.color = "white";
     });
-    
+
+    // Reset ribbons back to red
+    document.getElementById("recolor").style.backgroundColor = "red";
+    document.getElementById("decolor").style.backgroundColor = "red";
+
     document.getElementById("pop").style.backgroundColor = "white";
     document.getElementById("pop").style.color = "black";
 });
