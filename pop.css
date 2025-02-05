@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Prevents scrollbars */
+    overflow: hidden;
 }
 
 body {
@@ -11,14 +11,14 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    height: 100vh;
     display: flex;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Navbar */
+/* Navar  */
 nav {
     position: absolute;
     top: 0;
@@ -63,7 +63,7 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
@@ -82,27 +82,17 @@ h2 {
     transform: scale(1.1);
 }
 
-/* Bubble Effect Container */
-#bubble-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-}
-
-/* Bubble Effect */
+/* Bubbles */
 .bubble {
     position: absolute;
-    background-color: white; /* Will be randomized in JS */
+    background-color: white;
     border-radius: 50%;
     opacity: 1;
     transform: scale(0);
     animation: popAnim 0.9s ease-out forwards;
 }
 
-/* Animation */
+/* Animation Effect */
 @keyframes popAnim {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: scale(3); opacity: 0; }
