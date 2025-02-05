@@ -12,7 +12,7 @@ function getBrightColor() {
     let r = Math.floor(Math.random() * 156) + 100; // 100-255 (Avoiding dark colors)
     let g = Math.floor(Math.random() * 156) + 100;
     let b = Math.floor(Math.random() * 156) + 100;
-    return rgb(${r}, ${g}, ${b});
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 // Function to lighten a color
@@ -21,7 +21,7 @@ function lightenColor(rgbString, percent) {
     let r = Math.min(255, rgb[0] + percent);
     let g = Math.min(255, rgb[1] + percent);
     let b = Math.min(255, rgb[2] + percent);
-    return rgb(${r}, ${g}, ${b});
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 // Adding popping bubbles
@@ -34,12 +34,12 @@ document.getElementById("pop").addEventListener("click", function() {
 
     // Assign a random size for the bubble (between 50px and 150px)
     let bubbleSize = Math.floor(Math.random() * 100) + 50; 
-    bubble.style.width = ${bubbleSize}px;
-    bubble.style.height = ${bubbleSize}px;
+    bubble.style.width = `${bubbleSize}px`;
+    bubble.style.height = `${bubbleSize}px`;
 
     // Position bubble randomly
-    bubble.style.top = ${Math.random() * 100}vh;
-    bubble.style.left = ${Math.random() * 100}vw;
+    bubble.style.top = `${Math.random() * 100}vh`;
+    bubble.style.left = `${Math.random() * 100}vw`;
 
     document.getElementById("bubble-container").appendChild(bubble);
 
